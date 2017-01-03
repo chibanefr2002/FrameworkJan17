@@ -4,9 +4,7 @@ import base.CommonAPI;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-/**
- * Created by PIIT_NYA on 12/31/2016.
- */
+
 public class TestHomePage extends CommonAPI {
 
     @Test

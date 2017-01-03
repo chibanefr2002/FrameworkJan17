@@ -4,14 +4,14 @@
 
 
     <parameter name="usecloud" value="false"/>
-    <parameter name="userName" value="rahmanww"/>
+    <parameter name="userName" value="Yassine"/>
     <parameter name="accessKey" value=""/>
-    <parameter name="os" value="Mac"/>
+    <parameter name="os" value="Windows"/>
     <parameter name="url" value="https://www.amazon.com/"/>
     <parameter name="browserName" value="chrome"/>
-    <parameter name="browserVersion" value="50"/>
+    <parameter name="browserVersion" value="55"/>
 
-    <test name = "Cnn Home Page">
+    <test name = "Amazon Home Page">
       <classes>
           <class name="page.TestHomePage"/>
       </classes>

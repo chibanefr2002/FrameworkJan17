@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Potbelly Client on Chrome Browser">
+
+
+    <parameter name="usecloud" value="false"/>
+    <parameter name="userName" value="Yassine"/>
+    <parameter name="accessKey" value=""/>
+    <parameter name="os" value="Windows"/>
+    <parameter name="url" value="http://www.chase.com/"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="55"/>
+
+    <test name = "Chase Home Page">
+        <classes>
+            <class name="home.TestChaseHome"/>
+        </classes>
+    </test>
+
+</suite>

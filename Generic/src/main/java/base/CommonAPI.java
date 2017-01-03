@@ -21,9 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by PIIT_NYA on 12/31/2016.
- */
+
 public class CommonAPI {
 
 
@@ -31,7 +29,7 @@ public class CommonAPI {
     @Parameters({"url"})
     @BeforeMethod
     public void setUp(String url) throws Exception {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PIIT_NYA\\workspace-Novemver2016\\Selenium1\\driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yassine\\IdeaProjects\\FrameworkNov2016\\Generic\\driver\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get(url);

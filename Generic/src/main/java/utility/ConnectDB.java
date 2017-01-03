@@ -38,8 +38,8 @@ public class ConnectDB {
         Properties prop = loadProperties();
         String driverClass = prop.getProperty("MYSQLJDBC.driver");
         String url = prop.getProperty("MYSQLJDBC.url");
-        String userName = prop.getProperty("MYSQLJDBC.userName");
-        String password = prop.getProperty("MYSQLJDBC.password");
+        String userName = prop.getProperty("MYSQLJDBC.root");
+        String password = prop.getProperty("MYSQLJDBC.Nono+y44");
         Class.forName(driverClass);
         connect = DriverManager.getConnection(url,userName,password);
         //  System.out.println("Database is connected");

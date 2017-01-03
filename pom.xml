@@ -12,6 +12,8 @@
         <module>Generic</module>
         <module>Amazon</module>
         <module>Cnn</module>
+        <module>MicroCenter</module>
+        <module>Chase</module>
     </modules>
 
    <dependencyManagement>

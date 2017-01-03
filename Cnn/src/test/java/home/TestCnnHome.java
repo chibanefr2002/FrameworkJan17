@@ -6,9 +6,6 @@ import org.testng.annotations.Test;
 
 import javax.smartcardio.CommandAPDU;
 
-/**
- * Created by PIIT_NYA on 12/31/2016.
- */
 public class TestCnnHome extends CommonAPI{
 
     @Test
