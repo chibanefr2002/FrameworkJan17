@@ -3,17 +3,17 @@
 <suite name="Potbelly Client on Chrome Browser">
 
 
-    <parameter name="usecloud" value="false"/>
-    <parameter name="userName" value="Yassine"/>
-    <parameter name="accessKey" value=""/>
-    <parameter name="os" value="Windows"/>
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="userName" value="ychibane"/>
+    <parameter name="accessKey" value="e6895381-8286-4985-ba6f-e40fa1b19653"/>
+    <parameter name="os" value="WIN7"/>
     <parameter name="url" value="http://www.microcenter.com/"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="55"/>
 
     <test name = "MicroCenter Home Page">
         <classes>
-            <class name="home.TestMicroCenterHome"/>
+            <class name="SearchItems.TestMicroCenterHome"/>
         </classes>
     </test>
 

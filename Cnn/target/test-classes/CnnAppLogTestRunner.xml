@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Potbelly Client on Chrome Browser">
+
+
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="userName" value="ychibane"/>
+    <parameter name="accessKey" value="e6895381-8286-4985-ba6f-e40fa1b19653"/>
+    <parameter name="os" value="Win 7"/>
+    <parameter name="url" value="http://www.cnn.com/"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="55"/>
+
+    <test name = "Cnn Home Page">
+        <classes>
+            <class name="home.LogIn"/>
+            <class name="home.LogOut"/>
+        </classes>
+    </test>
+
+</suite>

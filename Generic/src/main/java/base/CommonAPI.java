@@ -1,6 +1,10 @@
 package base;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 import org.openqa.selenium.By;
@@ -13,10 +17,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -26,19 +32,67 @@ public class CommonAPI {
 
 
     public WebDriver driver = null;
-    @Parameters({"url"})
+    @Parameters({"useCloudEnv","userName","accessKey","os","browserName","browserVersion","url"})
     @BeforeMethod
-    public void setUp(String url) throws Exception {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yassine\\IdeaProjects\\FrameworkNov2016\\Generic\\driver\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+    public void setUp(@Optional("true") boolean useCloudEnv, @Optional("ychibane") String userName, @Optional("")
+            String accessKey, @Optional("Windows 7") String os, @Optional("firefox") String browserName, @Optional("50.1.0")
+                              String browserVersion, @Optional("http://www.cnn.com") String url) throws IOException {
+
+        if(useCloudEnv==true){
+            //run in cloud
+            getCloudDriver(userName,accessKey,os,browserName,browserVersion);
+
+        }else{
+            //run in local
+            getLocalDriver(os,browserName);
+
+        }
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get(url);
         driver.manage().window().maximize();
+
+    }
+
+    public WebDriver getLocalDriver(String OS,String browserName){
+        if(browserName.equalsIgnoreCase("chrome")){
+            if(OS.equalsIgnoreCase("Mac")){
+                System.setProperty("webdriver.chrome.driver", "../Generic/driver/chromedriver");
+            }else if(OS.equalsIgnoreCase("Win")){
+                System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yassine\\Desktop\\FrameworkNov2016\\Generic\\driver\\chromedriver.exe");
+            }
+            driver = new ChromeDriver();
+        }else if(browserName.equalsIgnoreCase("firefox")){
+            if(OS.equalsIgnoreCase("Mac")){
+                System.setProperty("webdriver.gecko.driver", "../Generic/driver/geckodriver");
+            }else if(OS.equalsIgnoreCase("Win")) {
+                System.setProperty("webdriver.gecko.driver", "C:\\Users\\Yassine\\Desktop\\FrameworkNov2016\\Generic\\driver\\geckodriver.exe");
+            }
+            driver = new FirefoxDriver();
+
+        } else if(browserName.equalsIgnoreCase("ie")) {
+            System.setProperty("webdriver.ie.driver", "../Generic/driver/IEDriverServer.exe");
+            driver = new InternetExplorerDriver();
+        }
+        return driver;
+
+    }
+
+    public WebDriver getCloudDriver(String userName,String accessKey,String os, String browserName,String browserVersion)throws IOException {{
+
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability("platform", os);
+        cap.setBrowserName(browserName);
+        cap.setCapability("version",browserVersion);
+        driver = new RemoteWebDriver(new URL("http://"+userName+":"+accessKey+
+                "@ondemand.saucelabs.com:80/wd/hub"), cap);
+        return driver;
+    }
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
-        driver.close();
+        driver.quit();
     }
 
     public void clickByCss(String locator) {
@@ -125,6 +179,7 @@ public class CommonAPI {
         }
         return items;
     }
+
     public void selectOptionByVisibleText(WebElement element, String value) {
         Select select = new Select(element);
         select.selectByVisibleText(value);

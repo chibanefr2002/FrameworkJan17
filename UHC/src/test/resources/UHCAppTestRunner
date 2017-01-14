@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Potbelly Client on Chrome Browser">
+
+
+    <parameter name="usecloudEnv" value="true"/>
+    <parameter name="userName" value="ychibane"/>
+    <parameter name="accessKey" value="e6895381-8286-4985-ba6f-e40fa1b19653"/>
+    <parameter name="os" value="WIN7"/>
+    <parameter name="url" value="http://www.uhc.com/"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="55"/>
+
+    <test name = "UHC Home Page">
+        <classes>
+            <class name="SearchItems.TestUHCHome"/>
+        </classes>
+    </test>
+
+</suite>

@@ -11,15 +11,17 @@
         <module name="Cnn" />
         <module name="Generic" />
         <module name="MicroCenter" />
+        <module name="UHC" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Amazon" target="1.5" />
+      <module name="Amazon" target="1.8" />
       <module name="Chase" target="1.5" />
-      <module name="Cnn" target="1.5" />
+      <module name="Cnn" target="1.8" />
       <module name="Generic" target="1.5" />
       <module name="MicroCenter" target="1.5" />
       <module name="Test-Automation" target="1.5" />
+      <module name="UHC" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

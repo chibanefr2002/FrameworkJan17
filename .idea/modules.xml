@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Generic/Generic.iml" filepath="$PROJECT_DIR$/Generic/Generic.iml" />
       <module fileurl="file://$PROJECT_DIR$/MicroCenter/MicroCenter.iml" filepath="$PROJECT_DIR$/MicroCenter/MicroCenter.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test-Automation.iml" filepath="$PROJECT_DIR$/Test-Automation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UHC/UHC.iml" filepath="$PROJECT_DIR$/UHC/UHC.iml" />
     </modules>
   </component>
 </project>

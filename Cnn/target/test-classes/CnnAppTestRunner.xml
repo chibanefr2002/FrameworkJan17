@@ -2,18 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Potbelly Client on Chrome Browser">
 
-
-    <parameter name="usecloud" value="false"/>
-    <parameter name="userName" value="Yassine"/>
-    <parameter name="accessKey" value=""/>
-    <parameter name="os" value="Windows"/>
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="userName" value="ychibane"/>
+    <parameter name="accessKey" value="e6895381-8286-4985-ba6f-e40fa1b19653"/>
+    <parameter name="os" value="WIN7"/>
     <parameter name="url" value="http://www.cnn.com/"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="55"/>
 
     <test name = "Cnn Home Page">
       <classes>
-          <class name="home.TestCnnHome"/>
+          <class name="SearchItems.TestCnnHome"/>
+
       </classes>
     </test>
 

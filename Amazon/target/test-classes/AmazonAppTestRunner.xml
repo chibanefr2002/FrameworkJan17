@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Potbelly Client on Chrome Browser">
 
+    <suite name="Amazon E-Commerce" parallel="tests">
 
-    <parameter name="usecloud" value="false"/>
-    <parameter name="userName" value="Yassine"/>
-    <parameter name="accessKey" value=""/>
-    <parameter name="os" value="Windows"/>
+    <parameter name="useCloudenv" value="true"/>
+    <parameter name="userName" value="ychibane"/>
+    <parameter name="accessKey" value="e6895381-8286-4985-ba6f-e40fa1b19653"/>
+    <parameter name="os" value="WIN7"/>
     <parameter name="url" value="https://www.amazon.com/"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="55"/>
 
-    <test name = "Amazon Home Page">
+    <test name = "Amazon Search">
       <classes>
-          <class name="page.TestHomePage"/>
+          <class name="SearchItems.TestHomePage"/>
+          <class name="SearchItems.DropDownMenuSearch"/>
+          <class name="SearchItems.Items"/>
       </classes>
     </test>
 
 </suite>
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">-->
+
+
+<!--<suite name="Amazon E-Commerce" parallel="tests">-->
+
+<!--<parameter name="useCloudEnv" value="true"/>-->
+<!--<parameter name="userName" value="ychibane"/>-->
+<!--<parameter name="accessKey" value="e6895381-8286-4985-ba6f-e40fa1b19653"/>-->
+<!--<parameter name="os" value="WIN7"/>-->
+<!--<parameter name="browserName" value="chrome"/>-->
+<!--<parameter name="browserVersion" value="55"/>-->
+<!--<parameter name="url" value="http://www.amazon.com"/>-->
+
+<!--<test name = "Amazon Search">-->
+    <!--<classes>-->
+        <!--&lt;!&ndash;<class name="SearchItems.Items"/>&ndash;&gt;-->
+        <!--<class name="SearchItems.DropDownMenuSearch"/>-->
+    <!--</classes>-->
+<!--</test>-->
+
+<!--</suite>-->
